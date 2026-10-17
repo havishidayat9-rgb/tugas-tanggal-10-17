@@ -702,3 +702,107 @@ a {
         transition-duration: .01ms !important;
     }
 }
+/* ==========================================================================
+   TUGAS 17 OKTOBER: RESPONSIVE DESIGN & PURE CSS HAMBURGER MENU (< 768px)
+   ========================================================================== */
+
+/* --- 1. ATURAN DEFAULT (TAMPILAN DESKTOP) --- */
+.menu-toggle {
+    display: none; /* Sembunyikan checkbox asli di semua layar */
+}
+
+.hamburger {
+    display: none; /* Sembunyikan tombol hamburger di layar komputer */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff; /* Warna garis hamburger */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* --- 2. ATURAN DI DALAM MEDIA QUERY (LAYAR HP & TABLET) --- */
+@media (max-width: 768px) {
+    
+    /* Munculkan tombol hamburger di HP */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Sembunyikan daftar navigasi bawaan desktop dan ubah jadi menu turun (dropdown) */
+    .nav-menu {
+        display: none; /* Hilang saat awal layar HP dibuka */
+        position: absolute;
+        top: 100%; /* Menempel tepat di bawah navbar */
+        left: 0;
+        width: 100%;
+        background-color: #0f172a; /* Warna background menu dropdown */
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    .nav-menu a {
+        font-size: 16px;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* KUNCI PURE CSS TOGGLE (Saat Hamburger Diklik/Dicenang, Munculkan Menu) */
+    .menu-toggle:checked ~ .nav-menu {
+        display: flex; /* Menu turun dan tampil */
+    }
+
+    /* Efek Animasi Hamburger berubah menjadi ikon 'X' saat diklik */
+    .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- 3. PENYESUAIAN LAYOUT KONTEN KANDUNGAN (FLUID LAYOUT) --- */
+    .hero {
+        flex-direction: column; /* Susun ke bawah pada layar HP */
+        padding: 40px 0;
+    }
+
+    .hero-content, .hero-visual {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Mengubah Grid Katalog Produk dari 3 Kolom Menjadi 1 Kolom di HP */
+    .product-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .product-card {
+        padding: 15px;
+    }
+
+    /* Penyesuaian Nilai Flexbox Cerita Brand */
+    .brand-showcase {
+        flex-direction: column;
+    }
+    
+    .brand-showcase img {
+        width: 100% !important; /* Gambar prestasi menumpuk vertikal */
+    }
+}
