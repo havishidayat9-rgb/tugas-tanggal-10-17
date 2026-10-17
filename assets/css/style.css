@@ -1,72 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* ==========================================================================
+   NEXORA - MODERN LIFESTYLE BRAND STYLESHEET (FINAL COMBINED)
+   ========================================================================== */
 
-:root {
-    --bg: #0b0d12;
-    --surface: #131720;
-    --text: #f5f7ff;
-    --muted: #9aa4b7;
-    --accent: #b7ff5a;
-    --border: rgba(255,255,255,.10);
-}
-
+/* --- RESET & DASAR DESAIN --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    line-height: 1.6;
+    background-color: #090d16;
+    color: #ffffff;
     overflow-x: hidden;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
 }
 
+/* --- NAVBAR BRAND --- */
 .navbar {
-    min-height: 82px;
-    padding: 18px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    background: rgba(11,13,18,.94);
-    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
-    z-index: 100;
-    backdrop-filter: blur(18px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+    background: rgba(9, 13, 22, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
 }
 
 .logo {
-    display: inline-flex;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: flex;
     align-items: center;
-    gap: 9px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    gap: 10px;
 }
 
 .logo-icon {
-    display: grid;
-    place-items: center;
-    width: 34px;
-    aspect-ratio: 1;
-    border-radius: 10px;
-    background: var(--accent);
-    color: var(--bg);
+    background: #adff2f;
+    color: #000000;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 900;
 }
 
-.dot, .hero h1 span, .section-heading h2 span,
-.cta h2 span, .brand-story h2 span {
-    color: var(--accent);
+.dot {
+    color: #adff2f;
 }
 
 .nav-menu {
@@ -75,113 +63,107 @@ a {
     gap: 30px;
 }
 
-.nav-menu > a {
-    color: var(--muted);
-    font-size: .92rem;
-    transition: color .25s;
+.nav-menu a:hover {
+    color: #adff2f;
 }
 
-.nav-menu > a:hover {
-    color: var(--accent);
+.nav-button {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
 }
 
-.nav-menu .nav-button {
-    padding: 10px 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
+.nav-button:hover {
+    background: #adff2f;
+    color: #000000;
+    transform: translateY(-2px);
 }
 
-.menu-toggle {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
-
-.hamburger {
-    display: none;
-}
-
-/* HERO */
-
+/* --- HERO SECTION (PERBAIKAN TATA LETAK) --- */
 .hero {
-    min-height: 620px;
-    padding: 85px 7%;
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
+    display: flex;
     align-items: center;
-    gap: 50px;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 100px 6%;
+    min-height: 85vh;
+    position: relative;
+    background: #090d16;
 }
 
 .hero-content {
-    max-width: 650px;
+    flex: 1.2;
+    max-width: 600px;
+    z-index: 5;
 }
 
 .eyebrow {
-    color: var(--accent);
-    font-size: .75rem;
+    color: #adff2f;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-.hero h1 {
-    margin: 22px 0;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4.6rem);
-    line-height: 1.08;
-    letter-spacing: -2px;
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
 }
 
-.hero-content > p, .section-heading > p,
-.cta > p, .brand-story > p {
-    color: var(--muted);
-    max-width: 490px;
+.hero-content h1 span {
+    color: #adff2f;
+}
+
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 35px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 30px;
-}
-
-.btn-primary, .btn-secondary {
-    min-height: 48px;
-    padding: 13px 20px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: .9rem;
-    transition: transform .25s, background .25s;
+    gap: 20px;
+    margin-bottom: 50px;
 }
 
 .btn-primary {
-    background: var(--accent);
-    color: var(--bg);
+    background: #adff2f;
+    color: #000000;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(173, 255, 47, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    background: #d0ff94;
+    box-shadow: 0 15px 25px rgba(173, 255, 47, 0.3);
 }
 
 .btn-secondary {
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
 }
 
 .btn-secondary:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #ffffff;
 }
 
 .hero-stats {
     display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
-    margin-top: 45px;
+    gap: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
 }
 
 .hero-stats div {
@@ -190,529 +172,362 @@ a {
 }
 
 .hero-stats strong {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
+    font-size: 24px;
+    color: #ffffff;
 }
 
 .hero-stats small {
-    color: var(--muted);
-    font-size: .75rem;
+    color: #64748b;
+    margin-top: 5px;
 }
 
-/* VISUAL BRAND */
-
+/* --- HERO VISUAL (DI SEBELAH KANAN - EFEK KACA) --- */
 .hero-visual {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    min-width: 0;
-    padding: 20px;
-}
-
-.glow {
-    position: absolute;
-    width: 75%;
-    aspect-ratio: 1;
-    top: 12%;
-    left: 12%;
-    border-radius: 50%;
-    background: var(--accent);
-    filter: blur(100px);
-    opacity: .12;
+    z-index: 2;
 }
 
 .product-display {
     position: relative;
-    min-height: 390px;
-    border: 1px solid rgba(183,255,90,.25);
-    border-radius: 24px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 35px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background:
-        radial-gradient(circle at 50% 40%,
-        rgba(183,255,90,.15), transparent 45%),
-        linear-gradient(145deg, #202838, #11151d 70%);
+    gap: 15px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s ease;
+}
+
+.product-display:hover {
+    transform: translateY(-5px);
+    border-color: rgba(173, 255, 47, 0.3);
 }
 
 .floating-tag {
-    position: absolute;
-    top: 22px;
-    left: 22px;
-    padding: 7px 11px;
-    border-radius: 5px;
-    background: rgba(183,255,90,.12);
-    color: var(--accent);
-    font-size: .65rem;
-    letter-spacing: 1px;
+    background: rgba(173, 255, 47, 0.1);
+    color: #adff2f;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border: 1px solid rgba(173, 255, 47, 0.15);
 }
 
-.product-symbol {
-    font-size: clamp(7rem, 15vw, 12rem);
-    color: var(--accent);
-    line-height: 1;
-    text-shadow: 0 0 70px rgba(183,255,90,.3);
-    animation: float 4s ease-in-out infinite;
+.hero-product-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.7));
+    margin: 10px 0;
 }
 
 .product-caption {
-    display: flex;
-    flex-direction: column;
     text-align: center;
-    margin-top: 20px;
 }
 
 .product-caption span {
-    color: var(--muted);
-    font-size: .65rem;
-    letter-spacing: 3px;
+    font-size: 11px;
+    color: #94a3b8;
+    letter-spacing: 1px;
 }
 
 .product-caption strong {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 3px;
+    font-size: 22px;
+    color: #ffffff;
+    display: block;
+    margin-top: 5px;
 }
 
 .floating-card {
     position: absolute;
-    right: -8px;
-    bottom: 45px;
-    padding: 14px 17px;
+    bottom: -10px;
+    right: -10px;
+    background: #1e293b;
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-size: 13px;
     display: flex;
     align-items: center;
     gap: 10px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: #1a202c;
-    font-size: .78rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .status-dot {
     width: 8px;
     height: 8px;
+    background: #adff2f;
     border-radius: 50%;
-    background: var(--accent);
+    box-shadow: 0 0 8px #adff2f;
 }
 
-/* FEATURES */
-
+/* --- KEUNGGULAN BRAND --- */
 .features {
-    padding: 28px 7%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    gap: 25px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background: #0e1117;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 60px 6%;
+    background: #0f172a;
 }
 
 .feature {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    gap: 20px;
+    align-items: flex-start;
 }
 
-.feature > span {
-    width: 46px;
-    height: 46px;
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    background: rgba(183,255,90,.09);
-    color: var(--accent);
-    font-size: 1.4rem;
+.feature span {
+    color: #adff2f;
+    font-size: 24px;
 }
 
 .feature strong {
-    font-size: .9rem;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .feature p {
-    color: var(--muted);
-    font-size: .76rem;
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-/* PRODUCT COLLECTION */
+/* --- BANNER PROMOSI --- */
+.promo-banners {
+    padding: 60px 6%;
+}
 
+.banner-container {
+    display: flex;
+    gap: 20px;
+}
+
+.promo-img {
+    width: 33.33%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- SECTION PRODUCTS / KATALOG --- */
 .products {
-    padding: 100px 7%;
+    padding: 80px 6%;
 }
 
 .section-heading {
     display: flex;
     justify-content: space-between;
-    align-items: end;
-    gap: 30px;
-    margin-bottom: 40px;
+    align-items: flex-end;
+    margin-bottom: 50px;
 }
 
-.section-heading h2, .cta h2, .brand-story h2 {
+.section-heading h2 {
+    font-size: 36px;
+    font-weight: 800;
     margin-top: 10px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.2;
 }
 
-.section-heading > p {
-    max-width: 350px;
+.section-heading h2 span {
+    color: #adff2f;
+}
+
+.section-heading p {
+    color: #94a3b8;
+    max-width: 400px;
+    line-height: 1.6;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    gap: 22px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .product-card {
-    min-width: 0;
-    padding: 10px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: var(--surface);
-    transition: transform .3s, border-color .3s;
+    background: #0f172a;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: transform 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-7px);
-    border-color: rgba(183,255,90,.45);
+    transform: translateY(-8px);
 }
 
 .product-art {
-    min-height: 230px;
     position: relative;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
+    height: 320px;
+    background: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.art-one {
-    background: linear-gradient(135deg,#202d42,#111722);
-}
-
-.art-two {
-    background: linear-gradient(135deg,#343044,#191421);
-}
-
-.art-three {
-    background: linear-gradient(135deg,#344239,#151d19);
-}
-
-.product-number, .art-label {
-    position: absolute;
-    color: rgba(255,255,255,.6);
-    font-size: .7rem;
-    letter-spacing: 2px;
+.art-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-number {
-    top: 15px;
-    left: 15px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .art-label {
-    bottom: 15px;
-    right: 15px;
-}
-
-.art-icon {
-    font-size: 7rem;
-    color: var(--accent);
-    transition: transform .4s;
-}
-
-.product-card:hover .art-icon {
-    transform: rotate(15deg) scale(1.12);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    letter-spacing: 1px;
 }
 
 .product-info {
-    padding: 18px 10px 12px;
+    padding: 25px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    align-items: center;
 }
 
 .product-info h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .product-info p {
-    color: var(--muted);
-    font-size: .8rem;
+    color: #64748b;
+    font-size: 14px;
 }
 
 .arrow {
-    color: var(--accent);
-    font-size: 1.4rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
 }
 
-/* BRAND STORY */
+.product-card:hover .arrow {
+    background: #adff2f;
+    color: #000000;
+}
 
+/* --- CERITA BRAND & PRESTASI --- */
 .brand-story {
-    padding: 75px 7%;
+    padding: 80px 6%;
+    background: #0f172a;
     text-align: center;
-    background: #0e1117;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.brand-story > p {
-    margin: 20px auto;
-    max-width: 680px;
+.brand-story h2 {
+    font-size: 36px;
+    margin: 15px 0 25px;
+}
+
+.brand-story h2 span {
+    color: #adff2f;
+}
+
+.brand-story p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto 40px;
 }
 
 .brand-values {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    margin-top: 25px;
+    gap: 20px;
 }
 
 .brand-values span {
-    padding: 9px 15px;
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    color: var(--accent);
-    font-size: .8rem;
+    color: #adff2f;
+    font-weight: 600;
+    font-size: 14px;
 }
 
-/* CONTACT CTA */
-
+/* --- KONTAK & FOOTER --- */
 .cta {
-    margin: 80px 7%;
-    padding: 65px 25px;
+    padding: 100px 6%;
     text-align: center;
-    border: 1px solid rgba(183,255,90,.2);
-    border-radius: 20px;
-    background:
-        radial-gradient(ellipse at top,
-        rgba(183,255,90,.12), transparent 60%),
-        var(--surface);
 }
 
-.cta > p {
-    margin: 15px auto 25px;
+.cta h2 {
+    font-size: 42px;
+    margin: 15px 0 25px;
+}
+
+.cta h2 span {
+    color: #adff2f;
+}
+
+.cta p {
+    color: #94a3b8;
+    margin-bottom: 40px;
 }
 
 .footer {
-    padding: 28px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    border-top: 1px solid var(--border);
+    padding: 40px 6%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #090d16;
 }
 
-.footer .logo {
-    font-size: 1rem;
+.footer p {
+    color: #64748b;
+    font-size: 14px;
 }
 
-.footer .logo-icon {
-    width: 28px;
-    border-radius: 8px;
-}
-
-.footer p, .back-top {
-    color: var(--muted);
-    font-size: .78rem;
+.back-top {
+    font-size: 14px;
+    color: #94a3b8;
 }
 
 .back-top:hover {
-    color: var(--accent);
+    color: #adff2f;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
-
-/* TABLET */
-
-@media (max-width: 900px) {
-    .navbar { padding-inline: 5%; }
-    .nav-menu { gap: 18px; }
-
-    .hero {
-        padding: 70px 5%;
-        gap: 25px;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.4rem,5vw,3.5rem);
-    }
-
-    .product-display { min-height: 330px; }
-
-    .features, .products { padding-inline: 5%; }
-    .product-grid { gap: 14px; }
-    .product-art { min-height: 190px; }
-    .art-icon { font-size: 5.5rem; }
-}
-
-/* SMARTPHONE + CSS HAMBURGER */
-
-@media (max-width: 768px) {
-    .navbar {
-        min-height: 72px;
-        padding: 15px 5%;
-        flex-wrap: wrap;
-    }
-
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 6px;
-        width: 42px;
-        height: 42px;
-        align-items: center;
-        cursor: pointer;
-        border: 1px solid var(--border);
-        border-radius: 9px;
-    }
-
-    .hamburger span {
-        display: block;
-        width: 20px;
-        height: 2px;
-        border-radius: 5px;
-        background: var(--text);
-        transition: transform .25s, opacity .25s;
-    }
-
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        width: 100%;
-        padding: 10px 0 5px;
-    }
-
-    .nav-menu > a {
-        padding: 13px 5px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav-menu .nav-button {
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    .menu-toggle:checked ~ .nav-menu {
-        display: flex;
-    }
-
-    .menu-toggle:focus-visible + .hamburger {
-        outline: 2px solid var(--accent);
-        outline-offset: 4px;
-    }
-
-    .menu-toggle:checked + .hamburger span:first-child {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .menu-toggle:checked + .hamburger span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle:checked + .hamburger span:last-child {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 60px 6% 50px;
-        gap: 35px;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.5rem,9vw,4rem);
-        letter-spacing: -1.5px;
-    }
-
-    .hero-visual { padding: 8px 12px; }
-    .product-display { min-height: 330px; }
-
-    .floating-card {
-        right: 0;
-        bottom: 25px;
-    }
-
-    .hero-stats { gap: 25px; }
-
-    .features {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 30px 6%;
-    }
-
-    .products { padding: 70px 6%; }
-
-    .section-heading {
-        align-items: start;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .product-art { min-height: 260px; }
-    .art-icon { font-size: 7rem; }
-
-    .brand-story { padding: 60px 6%; }
-
-    .cta { margin: 55px 6%; padding: 50px 20px; }
-
-    .footer {
-        padding: 28px 6%;
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-/* SMALL SMARTPHONE */
-
-@media (max-width: 380px) {
-    .logo { font-size: 1.1rem; }
-    .hero h1 { font-size: 2.3rem; }
-    .hero-stats { gap: 18px; }
-    .hero-stats strong { font-size: 1.25rem; }
-    .hero-stats small { font-size: .68rem; }
-    .hero-actions > a { width: 100%; }
-    .product-display { min-height: 290px; }
-    .floating-card { font-size: .68rem; }
-}
-
-/* ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-    }
-}
 /* ==========================================================================
-   TUGAS 17 OKTOBER: RESPONSIVE DESIGN & PURE CSS HAMBURGER MENU (< 768px)
+   TUGAS 17 OKTOBER: RESPONSIVE & MOBILE PURE CSS HAMBURGER MENU
    ========================================================================== */
 
-/* --- 1. ATURAN DEFAULT (TAMPILAN DESKTOP) --- */
 .menu-toggle {
-    display: none; /* Sembunyikan checkbox asli di semua layar */
+    display: none;
 }
 
 .hamburger {
-    display: none; /* Sembunyikan tombol hamburger di layar komputer */
+    display: none;
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
@@ -721,88 +536,106 @@ a {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: #ffffff; /* Warna garis hamburger */
+    background-color: #ffffff;
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
-/* --- 2. ATURAN DI DALAM MEDIA QUERY (LAYAR HP & TABLET) --- */
 @media (max-width: 768px) {
-    
-    /* Munculkan tombol hamburger di HP */
+    .navbar {
+        padding: 15px 5%;
+    }
+
     .hamburger {
         display: flex;
     }
 
-    /* Sembunyikan daftar navigasi bawaan desktop dan ubah jadi menu turun (dropdown) */
     .nav-menu {
-        display: none; /* Hilang saat awal layar HP dibuka */
+        display: none;
         position: absolute;
-        top: 100%; /* Menempel tepat di bawah navbar */
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: #0f172a; /* Warna background menu dropdown */
+        background-color: #0f172a;
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
-        gap: 15px;
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-        z-index: 999;
-    }
-
-    .nav-menu a {
-        font-size: 16px;
-        margin: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    /* KUNCI PURE CSS TOGGLE (Saat Hamburger Diklik/Dicenang, Munculkan Menu) */
-    .menu-toggle:checked ~ .nav-menu {
-        display: flex; /* Menu turun dan tampil */
-    }
-
-    /* Efek Animasi Hamburger berubah menjadi ikon 'X' saat diklik */
-    .menu-toggle:checked ~ .hamburger span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .menu-toggle:checked ~ .hamburger span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle:checked ~ .hamburger span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* --- 3. PENYESUAIAN LAYOUT KONTEN KANDUNGAN (FLUID LAYOUT) --- */
-    .hero {
-        flex-direction: column; /* Susun ke bawah pada layar HP */
-        padding: 40px 0;
-    }
-
-    .hero-content, .hero-visual {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Mengubah Grid Katalog Produk dari 3 Kolom Menjadi 1 Kolom di HP */
-    .product-grid {
-        grid-template-columns: 1fr; 
+        padding: 30px 0;
         gap: 20px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        z-index: 999;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-
-    .product-card {
-        padding: 15px;
-    }
-
-    /* Penyesuaian Nilai Flexbox Cerita Brand */
-    .brand-showcase {
-        flex-direction: column;
-    }
-    
-    .brand-showcase img {
-        width: 100% !important; /* Gambar prestasi menumpuk vertikal */
-    }
+.nav-menu a {
+width: 100%;
+text-align: center;
+padding: 5px 0;
+}
+.nav-button {
+width: 80%;
+}
+.menu-toggle:checked ~ .nav-menu {
+display: flex;
+}
+.menu-toggle:checked ~ .hamburger span:nth-child(1) {
+transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle:checked ~ .hamburger span:nth-child(2) {
+opacity: 0;
+}
+.menu-toggle:checked ~ .hamburger span:nth-child(3) {
+transform: translateY(-8px) rotate(-45deg);
+}
+.hero {
+flex-direction: column;
+padding: 60px 5%;
+text-align: center;
+gap: 40px;
+}
+.hero-content h1 {
+font-size: 34px;
+}
+.hero-actions {
+justify-content: center;
+}
+.hero-stats {
+justify-content: center;
+gap: 20px;
+}
+.hero-visual {
+width: 100%;
+}
+.product-display {
+max-width: 100%;
+}
+.floating-card {
+right: 10px;
+}
+.product-grid {
+grid-template-columns: 1fr;
+gap: 25px;
+}
+.features {
+grid-template-columns: 1fr;
+gap: 25px;
+padding: 40px 5%;
+}
+.section-heading {
+flex-direction: column;
+align-items: flex-start;
+gap: 15px;
+}
+.banner-container, .brand-showcase {
+flex-direction: column;
+}
+.promo-img {
+width: 100%;
+}
+.brand-showcase img {
+width: 100% !important;
+}
+.footer {
+flex-direction: column;
+gap: 20px;
+text-align: center;
+}
 }
